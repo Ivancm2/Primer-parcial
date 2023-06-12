@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define TAMANO_ARREGLO 5
+
+int longitud(char *s);
+void copia(char *s, char *p);
+
+int main ()
+{
+
+
+    char cadena[20];
+    int longitud();
+    printf("\nDame una cadena (maximo 20): ");
+    gets(cadena);
+    printf("\n");
+    printf ("\nLa cadena %s mide %d ", cadena, longitud(cadena));       
+
+
+    char uno[20], dos[20];
+    printf ("\nDame una cadena:");
+    gets(uno);
+    copia(uno, dos);
+    printf ("\nLa copia de %s\n es %s\n", uno, dos);
+
+
+    return 0;
+}
+
+int longitud(char *s)
+{
+    int l;
+    l = 0;
+    while (*s++ != '\0') l++;
+    return l;
+} 
+
+void copia (char *s, char *p)
+{
+    while (*s) *p++ = *s++;
+    *p = '\0';
+} 
